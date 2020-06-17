@@ -2,5 +2,5 @@
     "WEB_SERVER": "httpd",
     "COMPOSER_VENDOR_DIR": "vendor",
     "WEBDIR": "public",
-    "PHP_VERSION": "{PHP_56_LATEST}"
+    "PHP_VERSION": "7.1.4"
 }
