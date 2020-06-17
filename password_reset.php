@@ -25,7 +25,7 @@ if (isset($_REQUEST['username'])){
 
 	//Checking is user existing in the database or not
        $url = 'https://f909b9e4.eu-gb.apigw.appdomain.cloud/moviegenie/signup';
-	   $data = array('action' => 'login', 'user_id' => $username, 'password' => $password);
+	   $data = array('action' => 'resetpassword', 'user_id' => $username, 'password' => $password);
 	   $options = array(
         'http' => array(
         'header'  => "Content-type: application/json",
@@ -38,18 +38,14 @@ $context  = stream_context_create($options);
 $result = file_get_contents( $url, false, $context );
 $response = json_decode( $result );
 if($response->Status == 200){
-    $_SESSION['username'] = $username;
-     $_SESSION['token'] = $response->Success->AuthToken;
-     //echo $_SESSION['token'];
-    header("Location: index.php");
+    "<div class='form'>
+<h3>Password Changed Successfully</h3>
+<br/>  Click here to <a href='login.php'>Login</a></div>"; 
 }
 else{
 	$msg = $response->Error->message;
-	echo "<script>
-    alert('$msg');</script>";
-header("Location: login.php");
-  }
-	
+	echo "<script>alert('$msg');</script>";
+	}
     }else{
 ?>
 <body>
@@ -61,7 +57,7 @@ header("Location: login.php");
         	</ul>
     	</div>
     	<div class="mx-auto order-0">
-        	<a class="navbar-brand" href="#"><img src="image/genie.png" style="width: 50px; height: 60px; color: black;"></a>
+        	<a class="navbar-brand" href="#"><img src="genie.png" style="width: 50px; height: 60px; color: black;"></a>
         	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
         	</button>
@@ -72,7 +68,7 @@ header("Location: login.php");
             		<a class="nav-link" style="color:white;" href="#"><i class="fa fa-user"></i>&nbsp;&nbsp;Account</a>
     			</li>
             	<li class="nav-item">
-                	<a class="nav-link" style="color:white;" href="registration.php">Register</a>
+                	<a class="nav-link" style="color:white;" href=login.php>Login</a>
             	</li>
         	</ul>
    		 </div>
@@ -84,23 +80,21 @@ header("Location: login.php");
 			<div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
 				<div class="card card-signins">
 					<div class="card-body" style="background-color: black;">
-						<h5 class="card-title text-center">SIGN IN</h5><hr>
+						<h5 class="card-title text-center">RESET PASSWORD</h5><hr>
 						 <form class="form" action="#" method="POST" name="login">
 						 	<div class="form-label-group">
 						 		<label>User Name</label>
 						 		<input type="text" id="name" class="form-control"  name="username" required style="background-color: black; border-color: grey;">
 						 		<div class="form-label-group">
-						 			<label for="inputPassword">Password</label>
+						 			<label for="inputPassword">New Password</label>
 						 			<input type="password" id="inputPassword" class="form-control" name="psw" required style="background-color: black; border-color: grey;">				 		
 						 		</div>
 						 		<div class="custom-control custom-checkbox mb-3">
 						 			<input type="checkbox" class="custom-control-input" id="customCheck1">
 						 		</div>
 						 		<center>
-						 			<button class="btn btn-lg" id="btn" type="submit"  name= "submit">Login</button>
+						 			<button class="btn btn-lg" id="btn" type="submit"  name= "submit">Reset</button>
 						 		</center><br>
-						 		<h5>New User?<a href="registration.php">Register</a></h5>
-						 		<h5>Forgot Password? <a href= "password_reset.php">Reset</a></h5>
 						 	</div>
 						 </form>
 					</div>
