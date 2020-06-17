@@ -6,4 +6,4 @@ applications:
   name: movie-genie
   disk_quota: 1024M
 buildpack: https://github.com/cloudfoundry/php-buildpack.git
-stack: cflinuxfs2
+stack: cflinuxfs3
