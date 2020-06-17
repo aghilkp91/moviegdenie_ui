@@ -17,7 +17,7 @@ if (isset($_POST['username'])){
 
 	//Checking is user existing in the database or not
        $url = 'https://f909b9e4.eu-gb.apigw.appdomain.cloud/moviegenie/signup';
-	   $data = array('action' => 'login', 'user_id' => $username, 'password' => '$password);
+	   $data = array('action' => 'login', 'user_id' => $username, 'password' => $password);
 	$options = array(
         'http' => array(
         'header'  => "Content-type: application/json\r\n",
