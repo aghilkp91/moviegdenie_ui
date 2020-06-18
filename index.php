@@ -255,6 +255,15 @@ exit(); }
   </div>
 </button>
 <script>
+  // Following the v2 message API, we add some items to context.
+  function preSendhandler(event) {
+    event.data.context.skills['main skill'].user_defined.ismember = true;
+    var usernames = '<?php echo $_SESSION["username"]; ?>';
+    console.log(usernames);
+    event.data.context.skills['main skill'].user_defined.movieuser_id = usernames ;
+  }
+</script>
+<script>
   window.watsonAssistantChatOptions = {
       integrationID: "b978f470-9114-4bbd-8bbf-a8fbf7a2d3c8", // The ID of this integration.
       region: "eu-gb", // The region your integration is hosted in.
@@ -274,6 +283,7 @@ exit(); }
       var usaername = '<? echo $_SESSION["username"]; ?>';
 
       instance.updateUserID(usaername)
+      instance.on({ type: "pre:send", handler: preSendhandler });
       instance.render().then(function() {
         // Now that Web Chat has been rendered (but is still closed), we make the
         // custom launcher button visible.
