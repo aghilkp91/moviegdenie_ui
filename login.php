@@ -10,7 +10,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" rel="stylesheet"/>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="page_1.css">
+<link rel="stylesheet" type="text/css" href="page_2.css">
 </head>
 
 <?php
@@ -46,72 +46,87 @@ if($response->Status == 200){
 else{
 	$msg = $response->Error->message;
 	echo "<script>
-    alert('$msg');</script>";
-header("Location: login.php");
+    alert('$msg');
+    window.location = 'login.php'</script>";
+    // header("Location: login.php");
   }
 	
     }else{
 ?>
 <body>
 	<nav class="navbar navbar-expand-sm navbar-dark">
-		<div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-			<ul class="navbar-nav mr-auto">
-            	<li class="nav-item active">
-                	<a class="nav-link" href="#">Home</a>
-        	</ul>
-    	</div>
-    	<div class="mx-auto order-0">
-        	<a class="navbar-brand" href="#"><img src="image/genie.png" style="width: 50px; height: 60px; color: black;"></a>
-        	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+      <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                  <a class="nav-link"  href="index.php" style="font-weight: bolder; color: white; font-family: Helvetica, sans-serif, fantasy; font-size: 1em;opacity: 0.7; padding: 10px 20px;
+  background-color:darkred;
+  color:white;">Home</a>
+
+          </ul>
+      </div>
+      <div class="mx-auto order-0">
+
+          <a class="navbar-brand" shref="#"><img src="image/movie_genie.png" style="width: 10em; color: black; opacity: 0.7"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
-        	</button>
-   		 </div>
-    	<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-        	<ul class="navbar-nav ml-auto">
-            	<li class="nav-item">
-            		<a class="nav-link" style="color:white;" href="#"><i class="fa fa-user"></i>&nbsp;&nbsp;Account</a>
-    			</li>
-            	<li class="nav-item">
-                	<a class="nav-link" style="color:white;" href="registration.php">Register</a>
-            	</li>
-        	</ul>
-   		 </div>
-	</nav>
-	<hr>
-	<br>
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-				<div class="card card-signins">
-					<div class="card-body" style="background-color: black;">
-						<h5 class="card-title text-center">SIGN IN</h5><hr>
-						 <form class="form" action="#" method="POST" name="login">
-						 	<div class="form-label-group">
-						 		<label>User Name</label>
-						 		<input type="text" id="name" class="form-control"  name="username" required style="background-color: black; border-color: grey;">
-						 		<div class="form-label-group">
-						 			<label for="inputPassword">Password</label>
-						 			<input type="password" id="inputPassword" class="form-control" name="psw" required style="background-color: black; border-color: grey;">				 		
-						 		</div>
-						 		<div class="custom-control custom-checkbox mb-3">
-						 			<input type="checkbox" class="custom-control-input" id="customCheck1">
-						 		</div>
-						 		<center>
-						 			<button class="btn btn-lg" id="btn" type="submit"  name= "submit">Login</button>
-						 		</center><br>
-						 		<h5>New User?<a href="registration.php">Register</a></h5>
-						 		<h5>Forgot Password? <a href= "password_reset.php">Reset</a></h5>
-						 	</div>
-						 </form>
-					</div>
-				</div>
-     		 </div>
-    	</div>
- 	 </div>
+          </button>
+       </div>
+      <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" id="btn" href="" onclick="fun()" style="font-weight: bolder; color: white; font-family: Helvetica, sans-serif, fantasy; font-size: 1em;opacity: 0.7; padding: 10px 20px;
+  background-color:darkred;
+  color:white;margin-right: 3em;" ><i class="fa fa-user" ></i>&nbsp;&nbsp;Account</a>
+          </li>
+              <li class="nav-item">
+                  <a class="nav-link" style="font-weight: bolder; color: white; font-family: Helvetica, sans-serif, fantasy; font-size: 1em;opacity: 0.7; padding: 10px 20px;
+  background-color:darkred;
+  color:white;" href="registration.php">Register</a>
+              </li>
+          </ul>
+       </div>
+  </nav>
+  
+  <hr>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signins">
+          <div class="card-body" style="border-width:3.5px; background-color: black; opacity: 0.8;">
+            <center><button class="btn btn-lg" id="btn"  name= "SIGN UP" style="background-color: black; width: 13em; height: 2em;">SIGN IN</button></center><hr>
+            <!-- <h4 class="card-title text-center" style="color: white; font-weight: bold;">SIGN IN</h4><hr> -->
+             <form class="form" action="#" method="POST" name="login">
+              <div class="form-label-group">
+                <label>User Name</label>
+                <input type="text" id="name" class="form-control"  name="username" required style="background-color: black; border-color: darkred;border-width: 2px; color: white;">
+                <div class="form-label-group">
+                  <label for="inputPassword">Password</label>
+                  <input type="password" id="inputPassword" class="form-control" name="psw" required style="background-color: black; border-color: darkred;border-width: 2px; color: white;">           
+                </div>
+                <div class="custom-control custom-checkbox mb-3">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                </div>
+                <center>
+                  <button class="btn btn-lg" id="btn" type="submit"  name= "submit" style="background-color: darkred;">Login</button>
+                </center><br>
+                <h5>New User?<a href="registration.php" style=" font-weight: bolder;color: darkred">Register</a></h5>
+                <h5>Forgot Password? <a href= "password_reset.php" style=" font-weight: bolder;color: darkred">Reset</a></h5>
+              </div>
+             </form>
+          </div>
+        </div>
+         </div>
+      </div>
+   </div>
 </div>
 <?php } ?>
 
-
+<script>
+  function fun(){
+  alert("Sorry, Currently you cannot view the page");
+  }
+</script>
 	
 
 </body>

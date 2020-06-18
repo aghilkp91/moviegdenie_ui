@@ -1,0 +1,48 @@
+body{
+	background-image: url("image/recom.png") ;
+
+	width: 100%;
+/*	opacity: 0.6;*/
+}
+
+h1,h4,h5{
+	color: white;
+}
+#btn {
+	padding: 10px 35px;
+	background-color:#1f1f1f;
+	color:white;
+}
+hr{
+	background-color: white;
+}
+label{
+	color:white;
+	font-weight: bold;
+}
+
+
+/* Create four equal columns that sits next to each other
+And also over write left & right padding with internal stylesheet for col*/
+.row > div {
+      padding: 0 4px !important;
+}
+
+img {
+    margin-top: 8px;
+    vertical-align: middle;
+  
+}
+.card-body{color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  border-width:5px; 
+  transform: translate(10%, 10%);
+  z-index: 2;
+  width: 80%;
+ 
+}
+
+
+

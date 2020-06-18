@@ -150,11 +150,13 @@ exit(); }
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
       <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                  <a class="nav-link" href="#">Home</a>
+                  <a class="nav-link" href="#" href="index.php" style="font-weight: bolder; color: white; font-family: Helvetica, sans-serif, fantasy; font-size: 1em;opacity: 0.7; padding: 10px 20px;
+  background-color:darkred;
+  color:white;">Home</a>
           </ul>
       </div>
       <div class="mx-auto order-0">
-          <a class="navbar-brand" href="#"><img src="image/genie.png" style="width: 50px; height: 60px; color: black;"></a>
+          <a class="navbar-brand" href="#"><img src="image/movie_genie.png" style="width: 10em;  color: black; opacity: 0.7"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -162,10 +164,14 @@ exit(); }
       <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
           <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" style="color:white;" href="#"><i class="fa fa-user"></i>&nbsp;&nbsp;Account</a>
+                <a class="nav-link" style="font-weight: bolder; color: white; font-family: Helvetica, sans-serif, fantasy; font-size: 1em;opacity: 0.7; padding: 10px 20px;
+  background-color:darkred;
+  color:white;" href="" onclick="fun()" ><i class="fa fa-user"></i>&nbsp;&nbsp;Account</a>
           </li>
               <li class="nav-item">
-                  <a class="nav-link" style="color:white;" href=logout.php>Logout</a>
+                  <a class="nav-link" style="font-weight: bolder; color: white; font-family: Helvetica, sans-serif, fantasy; font-size: 1em;opacity: 0.7; padding: 10px 20px;
+  background-color:darkred;
+  color:white;" href=logout.php>Logout</a>
               </li>
           </ul>
        </div>
@@ -281,6 +287,11 @@ setTimeout(function(){
     t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
     document.head.appendChild(t);
   });
+
+
+ function fun(){
+  alert("Sorry, Currently you cannot view the page");
+  }
 </script>
   </body>
   </html>
