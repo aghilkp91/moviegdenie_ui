@@ -43,15 +43,29 @@ $context  = stream_context_create($options);
 $result = file_get_contents( $url, false, $context );
 $response = json_decode( $result );
 if($response->Status == 200){
-    echo "<div class='form'>
-<h3> Successful</h3>
-<br/>Click here to <a href='login.php'>Login</a></div>";
+   $msg = $msg = $response->Success->message; 
+    echo "<script>
+    alert('$msg');
+    window.location = 'login.php'</script>"; 
+
+
+//     "<div class='form'>
+// <h3> Successful</h3>
+// <br/>Click here to <a href='login.php'>Login</a></div>";
     // header("Location: index.php");
 } else{
-    echo "<div class='form'>
-<h3>SOme error</h3>
-<br/>To go back to <a href='registration.php'>Registration</a></div>
-<br/>Click here to <a href='login.php'>Login</a></div>";
+  $msg = $msg = $response->Error->message; 
+    echo "<script>
+    alert('$msg');
+    window.location = 'registration.php'</script>"; 
+
+
+
+
+//     "<div class='form'>
+// <h3>SOme error</h3>
+// <br/>To go back to <a href='registration.php'>Registration</a></div>
+// <br/>Click here to <a href='login.php'>Login</a></div>";
     }
 }else{
 ?>
@@ -91,7 +105,7 @@ if($response->Status == 200){
         <div class="row">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card card-signins">
-                    <div class="card-body" style="border-width:3.5px; background-color: black; opacity: 0.8;">
+                    <div class="card-body" style="border-width:3.5px; background-color: black; opacity: 0.8;transform: translate(5%,5%);">
                          <center><button class="btn btn-lg" id="btn"  name= "SIGN UP" style="background-color: black; width: 13em; height: 2em;">SIGN UP</button></center><hr>
                          <form class="form-signin" action="" method="POST">
                             <div class="form-label-group">
@@ -109,7 +123,7 @@ if($response->Status == 200){
                                     <div class="form-label-group">
                                     <label for="gender">Gender</label>
                                     <select id="gender" required style="width: 100%;  background-color: black; border-color: darkred; border-width: 2px;">
-    <option value="gender">Gender</option>
+    <option value="gender"></option>
   <option value="male">Male</option>
   <option value="female">Female</option>
 

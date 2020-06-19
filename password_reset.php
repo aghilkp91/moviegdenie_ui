@@ -38,13 +38,27 @@ $context  = stream_context_create($options);
 $result = file_get_contents( $url, false, $context );
 $response = json_decode( $result );
 if($response->Status == 200){
-    "<div class='form'>
-<h3>Password Changed Successfully</h3>
-<br/>  Click here to <a href='login.php'>Login</a></div>"; 
+
+$msg = $msg = $response->Success->message; 
+    echo "<script>
+    alert('$msg');
+    window.location = 'login.php'</script>"; 
+
+
+
+
+//     "<div class='form'>
+// <h3>Password Changed Successfully</h3>
+// <br/>  Click here to <a href='login.php'>Login</a></div>"; 
 }
 else{
-	$msg = $response->Error->message;
-	echo "<script>alert('$msg');</script>";
+	$msg = $msg = $response->Error->message; 
+    echo "<script>
+    alert('$msg');
+    window.location = 'password_reset.php'</script>"; 
+
+
+
 	}
     }else{
 ?>

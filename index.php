@@ -164,7 +164,7 @@ exit(); }
       <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
           <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" style="font-weight: bolder; color: white; font-family: Helvetica, sans-serif, fantasy; font-size: 1em;opacity: 0.7; padding: 10px 20px;
+                <a class="nav-link" style="font-weight: bolder; color: white; font-family: Helvetica, sans-serif, fantasy; font-size:1em;opacity: 0.7; padding:10px 20px;
   background-color:darkred;
   color:white;" href="" onclick="fun()" ><i class="fa fa-user"></i>&nbsp;&nbsp;Account</a>
           </li>
