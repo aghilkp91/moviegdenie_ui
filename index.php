@@ -150,9 +150,7 @@ exit(); }
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
       <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                  <a class="nav-link" href="#" href="index.php" style="font-weight: bolder; color: white; font-family: Helvetica, sans-serif, fantasy; font-size: 1em;opacity: 0.7; padding: 10px 20px;
-  background-color:darkred;
-  color:white;">Home</a>
+                  <a class="nav-link" href="#" href="index.php" >Home</a>
           </ul>
       </div>
       <div class="mx-auto order-0">
@@ -164,18 +162,18 @@ exit(); }
       <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
           <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" style="font-weight: bolder; color: white; font-family: Helvetica, sans-serif, fantasy; font-size:1em;opacity: 0.7; padding:10px 20px;
-  background-color:darkred;
-  color:white;" href="" onclick="fun()" ><i class="fa fa-user"></i>&nbsp;&nbsp;Account</a>
+                <a class="nav-link" style="color: white"  onclick="fun()" >Account</a>
           </li>
+           <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+          <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                  <a class="nav-link" style="font-weight: bolder; color: white; font-family: Helvetica, sans-serif, fantasy; font-size: 1em;opacity: 0.7; padding: 10px 20px;
-  background-color:darkred;
-  color:white;" href=logout.php>Logout</a>
+                  <a class="nav-link" style="color: white" href=logout.php>Logout</a>
               </li>
           </ul>
        </div>
   </nav>
+</ul>
+</div>
   <hr>
   <div class="container-fluid">
     <div class="row"> 
@@ -251,7 +249,7 @@ exit(); }
  
 <button type="button" class="chatLauncher"  style="display:none;">
   <div>
-    <img src="image/genie.png" style="width: 30px; height: 40px; color: black;">
+   <center><img src="image/genie.png" style="width: 50px; height: 50px; color: black; position: center; "><center><h4 style="color: darkred">I am here</h4></center></center>
   </div>
 </button>
 <script>

@@ -122,7 +122,7 @@ if($response->Status == 200){
                                     <input type="text" id="country" class="form-control" name="country" required style="background-color: black; border-color: darkred;border-width: 2px; color: white;">
                                     <div class="form-label-group">
                                     <label for="gender">Gender</label>
-                                    <select id="gender" required style="width: 100%;  background-color: black; border-color: darkred; border-width: 2px;">
+                                    <select id="gender" name="gender" required style="width: 100%;  background-color: black; border-color: darkred; border-width: 2px;">
     <option value="gender"></option>
   <option value="male">Male</option>
   <option value="female">Female</option>
